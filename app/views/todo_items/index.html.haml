@@ -1,2 +1,6 @@
-%h1 TodoItems#index
+%h1= @todo_list.title
 %p Find me in app/views/todo_items/index.html.haml
+
+%ul.todo_items
+  - @todo_list.todo_items.each do |todo_item|
+    %li= todo_item.content
