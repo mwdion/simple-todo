@@ -3,7 +3,10 @@
 
 %ul.todo_items
   - @todo_list.todo_items.each do |todo_item|
-    %li= todo_item.content
+    %li{:id => dom_id(todo_item)} 
+      = todo_item.content
+      = link_to "Edit", edit_todo_list_todo_item_path(todo_item)
+
 
 %p 
   =link_to "New Todo Item", new_todo_list_todo_item_path
